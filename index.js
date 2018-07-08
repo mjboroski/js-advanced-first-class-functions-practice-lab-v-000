@@ -25,16 +25,14 @@ const driversByName = function(drivers){
 
 
 const totalRevenue  = function(drivers){
-  drivers.forEach(function(driver){
-    if (driver.hometown === location){
-      console.log(driver.name);
-  }});
+  return drivers.reduce(function(total, driver){
+    return driver.revenue + total;
+  }, 0);
 };
 
 
 const averageRevenue  = function(drivers){
-  drivers.forEach(function(driver){
-    if (driver.hometown === location){
-      console.log(driver.name);
-  }});
+  return drivers.reduce(function(driver){
+    console.log(driver.name);
+  });
 };
