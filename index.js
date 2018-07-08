@@ -11,22 +11,13 @@ const logDriversByHometown = function(drivers, location){
   }});
 };
 
-const driversByRevenue = function(drivers, location){
-  drivers.forEach(function(driver){
-    if (driver.hometown === location){
-      console.log(driver.name);
-  }});
+const driversByRevenue = function(drivers){
+  return drivers.slice().sort(function(driverA, driverB){
+    return driverA.revenue - driverB.revenue;
+    });
 };
 
-const driversByName = function(drivers, location){
-  drivers.forEach(function(driver){
-    if (driver.hometown === location){
-      console.log(driver.name);
-  }});
-};
-
-
-const totalRevenue  = function(drivers, location){
+const driversByName = function(drivers){
   drivers.forEach(function(driver){
     if (driver.hometown === location){
       console.log(driver.name);
@@ -34,7 +25,15 @@ const totalRevenue  = function(drivers, location){
 };
 
 
-const averageRevenue  = function(drivers, location){
+const totalRevenue  = function(drivers){
+  drivers.forEach(function(driver){
+    if (driver.hometown === location){
+      console.log(driver.name);
+  }});
+};
+
+
+const averageRevenue  = function(drivers){
   drivers.forEach(function(driver){
     if (driver.hometown === location){
       console.log(driver.name);
