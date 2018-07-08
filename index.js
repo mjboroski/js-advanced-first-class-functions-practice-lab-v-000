@@ -18,10 +18,9 @@ const driversByRevenue = function(drivers){
 };
 
 const driversByName = function(drivers){
-  drivers.forEach(function(driver){
-    if (driver.hometown === location){
-      console.log(driver.name);
-  }});
+  return drivers.slice().sort(function(driverA, driverB){
+    return driverA.name.localeCompare(driverB.name);
+    });
 };
 
 
